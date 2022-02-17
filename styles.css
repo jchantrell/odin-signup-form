@@ -1,0 +1,137 @@
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.splash {
+    background-image: url("images/shane-rounce-bike.jpg");
+    background-size: cover;
+    width: 40%;
+    text-align: center;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.content {
+    width: 60%;
+}
+
+.title {
+    font-size: 4em;
+    background: rgba(1, 2, 3, 0.3);
+    position: absolute;
+    width: 40vw;
+    top: 20vh;
+    color: white;
+    font-weight: 800;
+}
+
+.imageCredit {
+    position: absolute;
+    bottom: 1vh;
+    width: 40vw;
+    color: white;
+}
+
+
+.callout, .signup {
+    height: 35%;
+    display: flex;
+    background: #f6f6f6;
+    flex-grow: 1;
+}
+.callout{
+    font-size: 1.5em;
+}
+
+.calloutContainer {
+    position: absolute;
+    bottom: 70vh;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.callToAction {
+    padding-top: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    background: #ffffff;
+    flex-grow: 1;
+}
+
+.form * input {
+    width: 300px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.formHeading {
+    font-size: 1.5em;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.formContainer {
+    padding: 40px;
+}
+
+.firstRow, .secondRow, .thirdRow {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.firstName, .lastName, .email, .phoneNumber, .password, .confirmPassword {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+}
+
+.signup {
+}
+
+.signup-container {
+    padding-top: 30px;
+    padding-left: 40px;
+}
+
+.login {
+    padding-top: 20px;
+}
+
+.signup-button {
+    width: 200px;
+    height: 50px;
+}
+
+
+@media only screen and (max-width: 800px){
+    .splash{ 
+       display: none
+    }
+    .content{
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .splash{ 
+       display: none
+    }
+    .content{
+        width: 100vw;
+    }
+  }
+
