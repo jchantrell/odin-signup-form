@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
     border: 0;
     margin: 0;
@@ -8,7 +10,7 @@ body {
     height: 100vh;
     width: 100vw;
     display: flex;
-    align-items: stretch;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .splash {
@@ -16,7 +18,6 @@ body {
     background-size: cover;
     width: 40%;
     text-align: center;
-    flex: 1;
 }
 
 .content {
@@ -137,6 +138,9 @@ body {
     .form * input {
         width: 250px;
     }
+    .calloutContainer {
+        margin-top: 40px;
+    }
 }
 
 @media only screen and (max-width: 90em){ 
@@ -187,10 +191,12 @@ body {
     .splash {
         display: none;
     }
+
     .signupButton{
         background-color: #ffdd00;
         border-bottom: solid 4px black;
     }
+
     .login > a:link, .login > a:visited, .login > a:hover, .login > a:active {
         color: white;
     }
