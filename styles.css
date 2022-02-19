@@ -2,13 +2,13 @@ body {
     border: 0;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .main {
     height: 100vh;
     width: 100vw;
     display: flex;
+    align-items: stretch;
 }
 
 .splash {
@@ -16,19 +16,21 @@ body {
     background-size: cover;
     width: 40%;
     text-align: center;
-    flex-shrink: 0;
-    flex-grow: 0;
+    flex: 1;
 }
 
 .content {
     width: 60%;
+    background: #f6f6f6;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
     font-size: 4em;
     background: rgba(1, 2, 3, 0.3);
     position: absolute;
-    width: 40vw;
+    width: 40%;
     top: 20vh;
     color: white;
     font-weight: 800;
@@ -37,38 +39,34 @@ body {
 .imageCredit {
     position: absolute;
     bottom: 1vh;
-    width: 40vw;
+    width: 40%;
     color: white;
+    font-size: 1.2em;
 }
 
 
-.callout, .signup {
-    height: 35%;
-    display: flex;
-    background: #f6f6f6;
-    flex-grow: 1;
-}
 .callout{
     font-size: 1.5em;
 }
 
 .calloutContainer {
-    position: absolute;
-    bottom: 70vh;
-    padding-left: 40px;
-    padding-right: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+    margin-top: 300px;
 }
 
 .callToAction {
-    padding-top: 20px;
+    margin-top: 20px;
 }
 
 .form {
+    flex-flow: row wrap;
     display: flex;
     flex-direction: column;
-    height: 30%;
     background: #ffffff;
-    flex-grow: 1;
+    display: flex;
+    box-shadow: 0px 5px 5px rgba(1, 0, 0, 0.3);
 }
 
 .form * input {
@@ -80,58 +78,114 @@ body {
 
 .formHeading {
     font-size: 1.5em;
-    padding-top: 20px;
-    padding-left: 40px;
+    margin-top: 20px;
+    margin-left: 40px;
 }
 
 .formContainer {
-    padding: 40px;
+    padding: 0px 40px 40px 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .firstRow, .secondRow, .thirdRow {
     display: flex;
-    padding-bottom: 10px;
 }
 
 .firstName, .lastName, .email, .phoneNumber, .password, .confirmPassword {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    padding-top: 20px;
     padding-right: 50px;
 }
 
-.signup {
-}
-
-.signup-container {
-    padding-top: 30px;
-    padding-left: 40px;
+.signupContainer {
+    margin-top: 30px;
+    margin-left: 40px;
 }
 
 .login {
-    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-.signup-button {
+.signupButton {
     width: 200px;
     height: 50px;
+    background-color: #f5ce42;
+    border-radius: 15px;
+    border: none;
+    border-bottom: solid 4px black;
+    cursor: pointer;
 }
 
+.signupButton:active{
+    border-bottom: solid 2px black;
+}
 
-@media only screen and (max-width: 800px){
-    .splash{ 
-       display: none
-    }
-    .content{
-        width: 100vw;
+.imageCredit > a:link, a:visited, a:hover, a:active {
+    color: white;
+}
+
+.login > a:link, .login > a:visited, .login > a:hover, .login > a:active {
+    color: black;
+}
+
+@media only screen and (max-width: 100em){ 
+    .form * input {
+        width: 250px;
     }
 }
 
-@media only screen and (max-width: 800px){
-    .splash{ 
-       display: none
+@media only screen and (max-width: 90em){ 
+    .form * input {
+        width: 250px;
     }
-    .content{
+}
+
+@media only screen and (max-width: 60em){ 
+    .firstRow, .secondRow, .thirdRow {
+        display: block;
+    }
+    .form * input {
+        width: 250px;
+    }
+    .main {
+        flex-direction: column;
+    }
+    .callout, .form, .signup {
         width: 100vw;
     }
-  }
 
+    .callout, .signup {
+        background: rgba(1, 2, 3, 0.2);
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #f3f3f3;
+    }
+    .content {
+        width: 100vw;
+        background-image: url("images/shane-rounce-bike.jpg");
+        background-position: fixed;
+        background-size: cover;
+    }
+
+    .form {
+        background: rgba(1, 2, 3, 0.2);
+        color: white;
+        box-shadow: none;
+    }
+    
+    .splash {
+        display: none;
+    }
+    .signupButton{
+        background-color: #ffdd00;
+        border-bottom: solid 4px black;
+    }
+    .login > a:link, .login > a:visited, .login > a:hover, .login > a:active {
+        color: white;
+    }
+}
