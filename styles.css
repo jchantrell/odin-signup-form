@@ -7,24 +7,26 @@ body {
 }
 
 .main {
+    display: flex;
+    flex-flow: row wrap;
     height: 100vh;
     width: 100vw;
-    display: flex;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .splash {
     background-image: url("images/shane-rounce-bike.jpg");
     background-size: cover;
-    width: 40%;
+    height: 100vh;
+    width: 40vw;
     text-align: center;
 }
 
 .content {
-    width: 60%;
+    width: 60vw;
     background: #f6f6f6;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
 }
 
 .title {
@@ -45,6 +47,7 @@ body {
     font-size: 1.2em;
 }
 
+/* form styling */
 
 .callout{
     font-size: 1.5em;
@@ -71,10 +74,23 @@ body {
 }
 
 .form * input {
-    width: 300px;
+    width: 250px;
     height: 30px;
     justify-content: center;
     align-items: center;
+}
+
+.form * input:focus {
+    outline: 1px solid #6eeb34;
+}
+
+.form * input:focus:required:invalid{
+    outline: 1px solid crimson;
+}
+
+.form * input:focus:required:valid,
+.form * input:focus:required:placeholder-shown{
+
 }
 
 .formHeading {
@@ -96,8 +112,7 @@ body {
 
 .firstName, .lastName, .email, .phoneNumber, .password, .confirmPassword {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-flow: column wrap;
     padding-top: 20px;
     padding-right: 50px;
 }
@@ -126,6 +141,8 @@ body {
     border-bottom: solid 2px black;
 }
 
+/* styling for text links */
+
 .imageCredit > a:link, a:visited, a:hover, a:active {
     color: white;
 }
@@ -134,18 +151,21 @@ body {
     color: black;
 }
 
+/* resize certain divs to fit diff resolutions */
+
 @media only screen and (max-width: 100em){ 
-    .form * input {
-        width: 250px;
-    }
     .calloutContainer {
-        margin-top: 40px;
+        margin-top: 200px;;
     }
 }
 
+
 @media only screen and (max-width: 90em){ 
     .form * input {
-        width: 250px;
+        width: 200px;
+    }
+    .calloutContainer {
+        margin-top: 50px;;
     }
 }
 
@@ -200,4 +220,11 @@ body {
     .login > a:link, .login > a:visited, .login > a:hover, .login > a:active {
         color: white;
     }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
