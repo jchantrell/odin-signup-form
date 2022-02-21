@@ -17,7 +17,6 @@ body {
 .splash {
     background-image: url("images/shane-rounce-bike.jpg");
     background-size: cover;
-    height: 100vh;
     width: 40vw;
     text-align: center;
 }
