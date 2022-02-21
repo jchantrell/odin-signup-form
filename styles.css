@@ -81,10 +81,12 @@ body {
 
 .form * input:focus {
     outline: 1px solid #6eeb34;
+    outline-offset: -2px;
 }
 
 .form * input:focus:required:invalid{
     outline: 1px solid crimson;
+    outline-offset: -2px;
 }
 
 .form * input:focus:required:valid,
